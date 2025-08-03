@@ -1,2 +1,2 @@
 # deye-w
-Can i build a zeposs app to build a Deye plant dashboard?
+Can i build a zeposs app to show a Deye plant dashboard?
