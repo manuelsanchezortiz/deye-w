@@ -1,0 +1,29 @@
+msgid "deyeSettings"
+msgstr "Configuración Deye"
+
+msgid "urlService"
+msgstr "Url servicio:"
+
+msgid "appId"
+msgstr "ID App:"
+
+msgid "appSecret"
+msgstr "Secreto  App:"
+
+msgid "password"
+msgstr "Contraseña:"
+
+msgid "apiKey"
+msgstr "API Key:"
+
+msgid "plantId"
+msgstr "Id planta:"
+
+msgid "stationId"
+msgstr "Id estación:"
+
+msgid "Num.Ser. Dispositivo:"
+msgstr "Device SN:"
+
+msgid "email"
+msgstr "Correo elec.:"

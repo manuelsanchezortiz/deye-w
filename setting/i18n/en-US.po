@@ -1,5 +1,29 @@
-msgid "addTodo"
-msgstr "ADD TODO"
+msgid "deyeSettings"
+msgstr "Deye settings"
 
-msgid "delete"
-msgstr "DELETE"
+msgid "urlService"
+msgstr "Service Url:"
+
+msgid "appId"
+msgstr "App ID:"
+
+msgid "appSecret"
+msgstr "App Secret:"
+
+msgid "password"
+msgstr "Password:"
+
+msgid "apiKey"
+msgstr "API Key:"
+
+msgid "plantId"
+msgstr "Plant Id:"
+
+msgid "stationId"
+msgstr "Station Id:"
+
+msgid "deviceSn"
+msgstr "Device SN:"
+
+msgid "email"
+msgstr "Email:"

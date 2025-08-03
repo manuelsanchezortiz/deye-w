@@ -1,3 +1,5 @@
+import { gettext } from 'i18n';
+
 AppSettingsPage({
     state: {
         url: "",
@@ -11,7 +13,7 @@ AppSettingsPage({
         email: "",
     },
 
-    build(props) {
+    build(props) { 
         console.log("Building AppSettingsPage");
     this.state.url = props.settingsStorage.getItem("deye_url") || "";
     this.state.appId = props.settingsStorage.getItem("deye_app_id") || "";
@@ -42,24 +44,24 @@ AppSettingsPage({
                             letterSpacing: "1px",
                         },
                     },
-                    ["Configuración Deye"]
+                    [gettext('deyeSettings')],
                 ),
 
                 TextInput({
                     id: "urlInput",
-                    label: "URL del servicio:",
+                    label: gettext('urlService'),
                     value: this.state.url,
                     onChange: (value) => {
                         this.state.url = value;
                         props.settingsStorage.setItem("deye_url", this.state.url);
                     },
                     labelStyle: {
-                       color: "#fff" // Set label text to white
+                       color: "#fff"
                     },
                     style: {
                         width: "100%",
                         height: "40px",
-                        backgroundColor: "#222", // Slightly lighter black
+                        backgroundColor: "#222",
                         color: "#fff",
                         marginBottom: "12px",
                         border: "1px solid #333",
@@ -69,7 +71,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "appIdInput",
-                    label: "App ID:",
+                    label: gettext('appId'),
                     value: this.state.appId,
                     onChange: (value) => {
                         this.state.appId = value;
@@ -91,7 +93,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "appSecretInput",
-                    label: "App Secret:",
+                    label: gettext('appSecret'),
                     value: this.state.appSecret,
                     onChange: (value) => {
                         this.state.appSecret = value;
@@ -113,7 +115,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "passwordInput",
-                    label: "Contraseña:",
+                    label: gettext('password'),
                     value: this.state.password,
                     onChange: (value) => {
                         this.state.password = value;
@@ -135,7 +137,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "apiKeyInput",
-                    label: "API Key:",
+                    label: gettext('apiKey'),
                     value: this.state.apiKey,
                     onChange: (value) => {
                         this.state.apiKey = value;
@@ -157,7 +159,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "plantIdInput",
-                    label: "Plant Id:",
+                    label: gettext('plantId'),
                     value: this.state.plantId,
                     onChange: (value) => {
                         this.state.plantId = value;
@@ -179,7 +181,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "stationIdInput",
-                    label: "Station Id:",
+                    label: gettext('stationId'),
                     value: this.state.stationId,
                     onChange: (value) => {
                         this.state.stationId = value;
@@ -201,7 +203,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "deviceSnInput",
-                    label: "Device SN:",
+                    label: gettext('deviceSn'),
                     value: this.state.deviceSn,
                     onChange: (value) => {
                         this.state.deviceSn = value;
@@ -223,7 +225,7 @@ AppSettingsPage({
                 }),
                 TextInput({
                     id: "emailInput",
-                    label: "Email:",
+                    label: gettext('email'),
                     value: this.state.email,
                     onChange: (value) => {
                         this.state.email = value;

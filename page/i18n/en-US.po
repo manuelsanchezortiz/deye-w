@@ -1,2 +1,2 @@
-msgid "example"
-msgstr "This is an example in device"
+msgid "urlService"
+msgstr "URL del servicio:"
