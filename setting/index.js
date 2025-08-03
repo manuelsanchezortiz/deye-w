@@ -4,7 +4,8 @@ AppSettingsPage({
         url: "",
         username: "",
         password: "",
-        apiKey: ""
+        apiKey: "",
+        plantId: ""
     },
 
     build(props) {
@@ -13,6 +14,7 @@ AppSettingsPage({
         this.state.username = props.settingsStorage.getItem('deye_username') || "";
         this.state.password = props.settingsStorage.getItem('deye_password') || "";
         this.state.apiKey = props.settingsStorage.getItem('deye_api_key') || "";
+        this.state.plantId = props.settingsStorage.getItem('deye_plant_id') || "";
 
         return View(
             {
@@ -51,6 +53,7 @@ AppSettingsPage({
                     value: this.state.username,
                     onChange: (value) => {
                         this.state.username = value;
+                        props.settingsStorage.setItem('deye_username', this.state.username);
                     },
                     style: {
                         width: '100%',
@@ -66,6 +69,7 @@ AppSettingsPage({
                     value: this.state.password,
                     onChange: (value) => {
                         this.state.password = value;
+                        props.settingsStorage.setItem('deye_password', this.state.password);
                     },
                     style: {
                         width: '100%',
@@ -81,6 +85,7 @@ AppSettingsPage({
                     value: this.state.apiKey,
                     onChange: (value) => {
                         this.state.apiKey = value;
+                        props.settingsStorage.setItem('deye_api_key', this.state.apiKey);
                     },
                     style: {
                         width: '100%',
@@ -90,9 +95,25 @@ AppSettingsPage({
                         marginBottom: '10px'
                     }
                 }),
+                TextInput({
+                    id: 'plantIdInput',
+                    label: 'Plant Id:',
+                    value: this.state.plantId,
+                    onChange: (value) => {
+                        this.state.plantId = value;
+                        props.settingsStorage.setItem('deye_plant_id', this.state.plantId);
+                    },
+                    style: {
+                        width: '100%',
+                        height: '40px',
+                        backgroundColor: '#333333',
+                        color: '#ffffff',
+                        marginBottom: '10px'
+                    }
+                }),                
 
                 Button({
-                    label: 'Save Settings',
+                    label: 'Apply',
                     style: {
                         fontSize: '12px',
                         borderRadius: '30px',
@@ -100,15 +121,11 @@ AppSettingsPage({
                         color: 'white'
                     },
                     onClick: () => { 
-                        props.settingsStorage.setItem('deye_url', this.state.url);
-                        props.settingsStorage.setItem('deye_username', this.state.username);
-                        props.settingsStorage.setItem('deye_password', this.state.password);
-                        props.settingsStorage.setItem('deye_api_key', this.state.apiKey);
                         console.log(`Clicked url: ${this.state.url}`);
                         console.log(`Clicked username: ${this.state.username}`);
                         console.log(`Clicked password: ${this.state.password}`);
                         console.log(`Clicked apiKey: ${this.state.apiKey}`);
-                        //props.build(props)
+                        console.log(`Clicked plantId: ${this.state.plantId}`);
                     }
                 })
             ]);
