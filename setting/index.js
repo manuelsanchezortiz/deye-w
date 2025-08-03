@@ -1,19 +1,27 @@
 AppSettingsPage({
     state: {
         url: "",
-        username: "",
+        appId: "",
+        appSecret: "",
         password: "",
         apiKey: "",
         plantId: "",
+        stationId: "",
+        deviceSn: "",
+        email: "",
     },
 
     build(props) {
         console.log("Building AppSettingsPage");
-        this.state.url = props.settingsStorage.getItem("deye_url") || "";
-        this.state.username = props.settingsStorage.getItem("deye_username") || "";
-        this.state.password = props.settingsStorage.getItem("deye_password") || "";
-        this.state.apiKey = props.settingsStorage.getItem("deye_api_key") || "";
-        this.state.plantId = props.settingsStorage.getItem("deye_plant_id") || "";
+    this.state.url = props.settingsStorage.getItem("deye_url") || "";
+    this.state.appId = props.settingsStorage.getItem("deye_app_id") || "";
+    this.state.appSecret = props.settingsStorage.getItem("deye_app_secret") || "";
+    this.state.password = props.settingsStorage.getItem("deye_password") || "";
+    this.state.apiKey = props.settingsStorage.getItem("deye_api_key") || "";
+    this.state.plantId = props.settingsStorage.getItem("deye_plant_id") || "";
+    this.state.stationId = props.settingsStorage.getItem("deye_station_id") || "";
+    this.state.deviceSn = props.settingsStorage.getItem("deye_device_sn") || "";
+    this.state.email = props.settingsStorage.getItem("deye_email") || "";
 
         return View(
             {
@@ -60,12 +68,34 @@ AppSettingsPage({
                     },
                 }),
                 TextInput({
-                    id: "usernameInput",
-                    label: "Nombre de usuario:",
-                    value: this.state.username,
+                    id: "appIdInput",
+                    label: "App ID:",
+                    value: this.state.appId,
                     onChange: (value) => {
-                        this.state.username = value;
-                        props.settingsStorage.setItem("deye_username", this.state.username);
+                        this.state.appId = value;
+                        props.settingsStorage.setItem("deye_app_id", this.state.appId);
+                    },
+                    labelStyle: {
+                        color: "#fff"
+                    },
+                    style: {
+                        width: "100%",
+                        height: "40px",
+                        backgroundColor: "#222",
+                        color: "#fff",
+                        marginBottom: "12px",
+                        border: "1px solid #333",
+                        borderRadius: "8px",
+                        padding: "0 12px",
+                    },
+                }),
+                TextInput({
+                    id: "appSecretInput",
+                    label: "App Secret:",
+                    value: this.state.appSecret,
+                    onChange: (value) => {
+                        this.state.appSecret = value;
+                        props.settingsStorage.setItem("deye_app_secret", this.state.appSecret);
                     },
                     labelStyle: {
                         color: "#fff"
@@ -141,6 +171,72 @@ AppSettingsPage({
                         height: "40px",
                         backgroundColor: "#222",
                         color: "#fff",
+                        marginBottom: "12px",
+                        border: "1px solid #333",
+                        borderRadius: "8px",
+                        padding: "0 12px",
+                    },
+                }),
+                TextInput({
+                    id: "stationIdInput",
+                    label: "Station Id:",
+                    value: this.state.stationId,
+                    onChange: (value) => {
+                        this.state.stationId = value;
+                        props.settingsStorage.setItem("deye_station_id", this.state.stationId);
+                    },
+                    labelStyle: {
+                        color: "#fff"
+                    },
+                    style: {
+                        width: "100%",
+                        height: "40px",
+                        backgroundColor: "#222",
+                        color: "#fff",
+                        marginBottom: "12px",
+                        border: "1px solid #333",
+                        borderRadius: "8px",
+                        padding: "0 12px",
+                    },
+                }),
+                TextInput({
+                    id: "deviceSnInput",
+                    label: "Device SN:",
+                    value: this.state.deviceSn,
+                    onChange: (value) => {
+                        this.state.deviceSn = value;
+                        props.settingsStorage.setItem("deye_device_sn", this.state.deviceSn);
+                    },
+                    labelStyle: {
+                        color: "#fff"
+                    },
+                    style: {
+                        width: "100%",
+                        height: "40px",
+                        backgroundColor: "#222",
+                        color: "#fff",
+                        marginBottom: "12px",
+                        border: "1px solid #333",
+                        borderRadius: "8px",
+                        padding: "0 12px",
+                    },
+                }),
+                TextInput({
+                    id: "emailInput",
+                    label: "Email:",
+                    value: this.state.email,
+                    onChange: (value) => {
+                        this.state.email = value;
+                        props.settingsStorage.setItem("deye_email", this.state.email);
+                    },
+                    labelStyle: {
+                        color: "#fff"
+                    },
+                    style: {
+                        width: "100%",
+                        height: "40px",
+                        backgroundColor: "#222",
+                        color: "#fff",
                         marginBottom: "24px",
                         border: "1px solid #333",
                         borderRadius: "8px",
@@ -164,10 +260,14 @@ AppSettingsPage({
                     },
                     onClick: () => {
                         console.log(`Clicked url: ${this.state.url}`);
-                        console.log(`Clicked username: ${this.state.username}`);
+                        console.log(`Clicked appId: ${this.state.appId}`);
+                        console.log(`Clicked appSecret: ${this.state.appSecret}`);
                         console.log(`Clicked password: ${this.state.password}`);
                         console.log(`Clicked apiKey: ${this.state.apiKey}`);
                         console.log(`Clicked plantId: ${this.state.plantId}`);
+                        console.log(`Clicked stationId: ${this.state.stationId}`);
+                        console.log(`Clicked deviceSn: ${this.state.deviceSn}`);
+                        console.log(`Clicked email: ${this.state.email}`);
                     },
                 }),
             ]
