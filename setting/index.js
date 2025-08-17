@@ -6,8 +6,6 @@ AppSettingsPage({
         appId: "",
         appSecret: "",
         password: "",
-        apiKey: "",
-        plantId: "",
         stationId: "",
         deviceSn: "",
         email: "",
@@ -19,8 +17,6 @@ AppSettingsPage({
     this.state.appId = props.settingsStorage.getItem("deye_app_id") || "";
     this.state.appSecret = props.settingsStorage.getItem("deye_app_secret") || "";
     this.state.password = props.settingsStorage.getItem("deye_password") || "";
-    this.state.apiKey = props.settingsStorage.getItem("deye_api_key") || "";
-    this.state.plantId = props.settingsStorage.getItem("deye_plant_id") || "";
     this.state.stationId = props.settingsStorage.getItem("deye_station_id") || "";
     this.state.deviceSn = props.settingsStorage.getItem("deye_device_sn") || "";
     this.state.email = props.settingsStorage.getItem("deye_email") || "";
@@ -136,50 +132,6 @@ AppSettingsPage({
                     },
                 }),
                 TextInput({
-                    id: "apiKeyInput",
-                    label: gettext('apiKey'),
-                    value: this.state.apiKey,
-                    onChange: (value) => {
-                        this.state.apiKey = value;
-                        props.settingsStorage.setItem("deye_api_key", this.state.apiKey);
-                    },
-                    labelStyle: {
-                        color: "#fff"
-                    },
-                    style: {
-                        width: "100%",
-                        height: "40px",
-                        backgroundColor: "#222",
-                        color: "#fff",
-                        marginBottom: "12px",
-                        border: "1px solid #333",
-                        borderRadius: "8px",
-                        padding: "0 12px",
-                    },
-                }),
-                TextInput({
-                    id: "plantIdInput",
-                    label: gettext('plantId'),
-                    value: this.state.plantId,
-                    onChange: (value) => {
-                        this.state.plantId = value;
-                        props.settingsStorage.setItem("deye_plant_id", this.state.plantId);
-                    },
-                    labelStyle: {
-                        color: "#fff"
-                    },
-                    style: {
-                        width: "100%",
-                        height: "40px",
-                        backgroundColor: "#222",
-                        color: "#fff",
-                        marginBottom: "12px",
-                        border: "1px solid #333",
-                        borderRadius: "8px",
-                        padding: "0 12px",
-                    },
-                }),
-                TextInput({
                     id: "stationIdInput",
                     label: gettext('stationId'),
                     value: this.state.stationId,
@@ -265,8 +217,6 @@ AppSettingsPage({
                         console.log(`Clicked appId: ${this.state.appId}`);
                         console.log(`Clicked appSecret: ${this.state.appSecret}`);
                         console.log(`Clicked password: ${this.state.password}`);
-                        console.log(`Clicked apiKey: ${this.state.apiKey}`);
-                        console.log(`Clicked plantId: ${this.state.plantId}`);
                         console.log(`Clicked stationId: ${this.state.stationId}`);
                         console.log(`Clicked deviceSn: ${this.state.deviceSn}`);
                         console.log(`Clicked email: ${this.state.email}`);

@@ -12,7 +12,6 @@
     "@zeppos/device-types": "^3.0.0"
   },
   "dependencies": {
-    "@zeppos/zml": "^0.0.9",
-    "@zos/i18n": "^0.0.9"
+    "@zeppos/zml": "^0.0.9"
   }
 }
