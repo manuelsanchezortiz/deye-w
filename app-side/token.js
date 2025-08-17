@@ -6,6 +6,9 @@ import { hash } from "./HMAC";
  * @returns {Promise<string>} - Resolves to the access token.
  */
 export async function getToken(settingsStorage) {
+
+  console.log("Calling getToken ...");  
+
   const appId = settingsStorage.getItem("deye_app_id") || "";
   const baseurl = settingsStorage.getItem("deye_url") || "";
   const appSecret = settingsStorage.getItem("deye_app_secret") || "";
@@ -37,6 +40,7 @@ export async function getToken(settingsStorage) {
     if (!token) {
       throw new Error(`Token not found in response: ${JSON.stringify(result)}`);
     }
+    console.log("Token retrieved successfully:", token);
     return token;
   } catch (err) {
     console.log("Error retrieving token:", err);

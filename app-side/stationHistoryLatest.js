@@ -1,11 +1,14 @@
-import { getToken } from "../utils/getToken";
+import { getToken } from "./token";
 
 /**
  * Fetches the latest station data from the Deye API.
  * @param {object} settingsStorage - The ZeppOS settingsStorage object.
  * @returns {Promise<object>} - Resolves to the response JSON.
  */
-export async function fetchStationLatest(settingsStorage) {
+export async function getStationHistoryLatest(settingsStorage) {
+
+  console.log("Calling getStationHistoryLatest ...");
+
   const baseurl = settingsStorage.getItem("deye_url") || "";
   const stationId = settingsStorage.getItem("deye_station_id") || "";
 
@@ -29,9 +32,11 @@ export async function fetchStationLatest(settingsStorage) {
     });
     const status = response.status;
     const result = typeof response.body === "string" ? JSON.parse(response.body) : response.body;
-    console.log("Status:", status);
-    console.log("Result:", result);
-    return { status, result };
+
+    console.log("getStationHistoryLatest Status:", status);
+    console.log("getStationHistoryLatest Result:", result);
+
+    return result;
   } catch (err) {
     console.log("Error fetching station latest:", err);
     throw err;

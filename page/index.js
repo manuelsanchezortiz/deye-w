@@ -6,7 +6,10 @@ import {
   FETCH_RESULT_TEXT,
 } from "zosLoader:./index.[pf].layout.js";
 
+import services from "../app-side/services";
+
 const logger = Logger.getLogger("fetch_api");
+const { STATION_HISTORY_LATEST } = services;
 
 let textWidget;
 Page(
@@ -23,7 +26,7 @@ Page(
     },
     fetchData() {
       this.request({
-        method: "GET_DATA",
+        method: STATION_HISTORY_LATEST,
       })
         .then((data) => {
           logger.log("receive data");
