@@ -28,7 +28,8 @@
       "module": {
         "page": {
           "pages": [
-            "page/index"
+            "pages/main/index",
+            "pages/consumption/index"
           ]
         },
         "app-side": {

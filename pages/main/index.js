@@ -5,8 +5,9 @@ import {
   FETCH_BUTTON,
   FETCH_RESULT_TEXT,
 } from "zosLoader:./index.[pf].layout.js";
+import { push } from '@zos/router'
 
-import services from "../app-side/services";
+import services from "../../app-side/services";
 
 const logger = Logger.getLogger("fetch_api");
 const { STATION_HISTORY_LATEST } = services;
@@ -41,6 +42,8 @@ Page(
           } else {
             textWidget.setProperty(hmUI.prop.TEXT, text);
           }
+          logger.log("Will push to consumption page");
+          push({ url: 'pages/consumption/index', params: { stationDataItem: result } });
         })
         .catch((res) => {});
     },
